@@ -2,6 +2,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #bebebe;
 }
 
 /*ヘッダー部分*/
@@ -36,11 +37,28 @@ header h1{
     font-weight: bold;
 }
 #readed_txt{
-    background-color: gray;
+    margin: 5%;
+    padding-left: 1%;
+    background-color: white;
+}
+#text_input_to{
+    padding-left: 2%;
 }
 #camera_image{
     max-width: 100%;
     max-height: 100%;
+}
+
+#clear_data{
+    margin-top: 20px;
+    margin-left: 5px;
+    color: white;
+    background-color: #077317;
+    height: 50px;
+    width: 45%;
+    max-width: 300px;
+    border-radius: 1em;
+    font-weight: bold;
 }
 
 /*フッター部分*/

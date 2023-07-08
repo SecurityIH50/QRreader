@@ -1,12 +1,14 @@
 document.getElementById("start_camera").onclick = function(){
     //スタイル(別jsによって定義)
     camera_start();
+    document.getElementById("reader").style.display = "block";
     //カメラ使用
     const video  = document.getElementById("camera_image");
     navigator.mediaDevices.getUserMedia({
         //マイク不使用
         audio: false,
         video: {
+            //画質設定
             width:{min:720},
             height:{min:1280},
             facingMode: {
@@ -47,15 +49,6 @@ document.getElementById("start_camera").onclick = function(){
             // 失敗したら再度実行
             if (code) {
                 alert("以下のデータが見つかりました。\n"+code.data);
-                //カメラのHTML側への反映を消す
-                video.pause();
-                document.getElementById("camera_image").style.display = "none";
-                //カメラの動作を止める
-                //けど動作させっぱなしでもいいような気がする（将来的に改善）
-                //読み取ったデータをHTML側に書き込む
-                document.getElementById("readed_txt").innerText = code.data;
-                //codeのデータを消す（次回以降用）
-                //AND条件で実装？
                 //記録(別jsの関数)
                 record(code.data);
                 //サイトをリロード（カメラのリセット）
