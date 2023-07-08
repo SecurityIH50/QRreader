@@ -26,7 +26,7 @@ window.addEventListener('load', (event) => {
     }
     localst_data.reverse();
     for (let index = 0; index < localst_data.length; index++) {
-        htmlinput_text = htmlinput_text + localst_data[index] + "\n";
+        htmlinput_text =+ localst_data[index] + "\n";
     }
     document.getElementById("text_input_to").innerText = htmlinput_text;
 });
