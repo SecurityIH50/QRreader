@@ -1,5 +1,5 @@
 //グローバル変数
-let localst_data = localStorage.getItem('recorded_data');
+let localst_data = new Array();
 
 //サイト読み込み時に実行（書込み動作）
 window.addEventListener('load', (event) => {
@@ -8,27 +8,31 @@ window.addEventListener('load', (event) => {
         alert("ご利用中のブラウザーではご利用いただけません。");
     }
     //データがあれば反映する
-    if(localst_data){
-        localst_data.reverse();
-        let localst_length = localst_data.length();
-        let htmlinput_text;
-        for (let index = 0; index < localst_length; index++) {
-            htmlinput_text = htmlinput_text + localst_data[index] + "\n";
+    let data_alive = true;
+    let data_index = 1;
+    let htmlinput_text;
+    while (data_alive) {
+        let recorded_data_cache =  localStorage.getItem(data_index);
+        if(recorded_data_cache){
+            localst_data.push(recorded_data_cache);
+            data_index++;
+        }else{
+            htmlinput_text = "データが存在しません。";
+            data_alive = false;
         }
-        document.getElementById("text_input_to").innerText = htmlinput_text;
-    }else{
-        document.getElementById("text_input_to").innerText = "データが存在しません。";
     }
+    localst_data.reverse();
+    for (let index = 0; index < localst_data.length; index++) {
+        htmlinput_text = htmlinput_text + localst_data[index] + "\n";
+    }
+    document.getElementById("text_input_to").innerText = htmlinput_text;
 });
 
 
 //記録動作
 function record(qrdata){
-    if(!localst_data){
-        localst_data = new Array()
-    };
-    localst_data.push(qrdata);
-    localStorage.setItem('recorded_data',localst_data);
+    let last_data = localst_data.length() + 1;
+    localStorage.setItem(last_data,qrdata);
 }
 
 
