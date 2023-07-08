@@ -31,7 +31,7 @@ window.addEventListener('load', (event) => {
 
 //記録動作
 function record(qrdata){
-    let last_data = localst_data.length() + 1;
+    let last_data = localst_data.length + 1;
     localStorage.setItem(last_data,qrdata);
 }
 
