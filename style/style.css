@@ -1,5 +1,6 @@
 /*HTML全体*/
 body{
+    font-family: "Yu Gothic UI","Meiryo","ヒラギノ角ゴシック",system-ui;
     margin: 0;
     padding: 0;
     background-color: #bebebe;
