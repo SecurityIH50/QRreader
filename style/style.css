@@ -1,0 +1,57 @@
+/*HTML全体*/
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/*ヘッダー部分*/
+header{
+    background-color: #260773;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+header h1{
+    margin: 0;
+    padding: 0;
+}
+
+/*メイン部分*/
+#start_camera,#stop_camera{
+    margin-top: 20px;
+    margin-left: 5px;
+    color: white;
+    height: 50px;
+    width: 45%;
+    max-width: 300px;
+    border-radius: 1em;
+}
+#start_camera{
+    background-color: #260773;
+}
+#stop_camera{
+    background-color: red;
+}
+#buttons button{
+    font-weight: bold;
+}
+#readed_txt{
+    background-color: gray;
+}
+#camera_image{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*フッター部分*/
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+footer p{
+    margin: 0;
+    padding: 0;
+}
