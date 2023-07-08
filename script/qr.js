@@ -9,8 +9,8 @@ document.getElementById("start_camera").onclick = function(){
         audio: false,
         video: {
             //画質設定
-            width:{min:1000},
-            height:{min:1000},
+            width:{min:1080},
+            height:{min:1920},
             facingMode: {
                 //外側のカメラを使用を強制
                 exact: 'environment'

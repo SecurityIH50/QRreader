@@ -50,6 +50,11 @@ header h1{
     max-height: 100%;
 }
 
+#js-canvas{
+    width: 1080px;
+    height: 1920px;
+}
+
 #clear_data{
     margin-top: 20px;
     margin-left: 5px;
