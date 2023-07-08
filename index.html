@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>スタンプラリー[beta]</title>
+    <title>QRコードリーダー[beta]</title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
     <header>
-        <h1>QRコードによるスタンプラリー[beta]</h1>
+        <h1>QRコードリーダー[beta]</h1>
     </header>
     <main>
         <div id="buttons">
             <button type="button" id="start_camera">読取開始</button>
             <button type="button" id="stop_camera">停止</button>
         </div>
-        <div class="reader">
+        <div id="reader">
             <video id="camera_image" class="reader-video" autoplay playsinline></video>
         </div>
         <div style="display:none">
             <canvas id="js-canvas"></canvas>
         </div>
-        <p id="readed_txt"></p>
+        <div id="readed_txt">
+            <p><b>過去に読み取ったデータ：</b></p>
+            <p id="text_input_to"></p>
+        </div>
+        <button type="button" id="clear_data">履歴消去</button>
     </main>
     <footer>
         <p>All rights reserved.</p>
