@@ -50,6 +50,7 @@ document.getElementById("clear_data").onclick = function(){
     if(confirm_result){
         localStorage.clear();
         alert("過去に読み取ったデータを全て消去しました。");
+        location.reload();
     }else{
         alert("消去作業を中止しました。");
     }
