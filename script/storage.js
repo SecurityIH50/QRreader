@@ -17,8 +17,11 @@ window.addEventListener('load', (event) => {
             localst_data.push(recorded_data_cache);
             data_index++;
         }else{
-            htmlinput_text = "データが存在しません。";
             data_alive = false;
+            //一つもデータがなかった場合
+            if(data_index==1){
+                htmlinput_text = "データが存在しません。";
+            };
         }
     }
     localst_data.reverse();
