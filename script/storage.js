@@ -12,7 +12,6 @@ window.addEventListener('load', (event) => {
     let data_alive = true;
     let data_dead;
     let data_index = 1;
-    let htmlinput_text;
     while (data_alive) {
         let recorded_data_cache =  localStorage.getItem(data_index);
         if(recorded_data_cache){
@@ -37,7 +36,6 @@ window.addEventListener('load', (event) => {
             new_element = document.createElement('p');
             new_element.textContent = localst_data[index];
             new_element.setAttribute("onclick","jump_url(this)");
-            new_element.setAttribute("id","outputurl_"+index);
             new_element.setAttribute("class","readed_txt_input_to");
             div_input.appendChild(new_element);
         }

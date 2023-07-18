@@ -21,6 +21,8 @@ function image_scan(e) {
                 record(data.data);
                 //反映
                 location.reload();
+            }else{
+                alert("QRコードが存在しないか、読み取れません。再度お試しください。");
             }
         };
         const dataURL = theFile.target.result;
