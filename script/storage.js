@@ -1,6 +1,6 @@
 //グローバル変数
 let localst_data = new Array();
-const div_input = document.getElementById("readed_txt_input_to");
+const div_input = document.getElementById("readed_txt");
 
 //サイト読み込み時に実行（書込み動作）
 window.addEventListener('load', (event) => {
@@ -36,8 +36,9 @@ window.addEventListener('load', (event) => {
         for (let index = 0; index < localst_data.length; index++) {
             new_element = document.createElement('p');
             new_element.textContent = localst_data[index];
-            new_element.setAttribute("onclick","jump_url(this)")
-            new_element.setAttribute("id","outputurl_"+index)
+            new_element.setAttribute("onclick","jump_url(this)");
+            new_element.setAttribute("id","outputurl_"+index);
+            new_element.setAttribute("class","readed_txt_input_to");
             div_input.appendChild(new_element);
         }
     }

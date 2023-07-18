@@ -66,7 +66,7 @@ header h1{
     background-color: white;
     overflow-wrap: break-word;
 }
-#readed_txt_input_to{
+.readed_txt_input_to{
     color: blue;
     text-decoration: underline;
     text-decoration-color: blue;
