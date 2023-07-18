@@ -1,5 +1,6 @@
 //グローバル変数
 let localst_data = new Array();
+const div_input = document.getElementById("readed_txt_input_to");
 
 //サイト読み込み時に実行（書込み動作）
 window.addEventListener('load', (event) => {
@@ -9,6 +10,7 @@ window.addEventListener('load', (event) => {
     }
     //データがあれば反映する
     let data_alive = true;
+    let data_dead;
     let data_index = 1;
     let htmlinput_text;
     while (data_alive) {
@@ -20,19 +22,25 @@ window.addEventListener('load', (event) => {
             data_alive = false;
             //一つもデータがなかった場合
             if(data_index==1){
-                htmlinput_text = "データが存在しません。";
+                data_dead = true;
             };
         }
     }
     localst_data.reverse();
-    for (let index = 0; index < localst_data.length; index++) {
-        if(htmlinput_text){
-            htmlinput_text = htmlinput_text + localst_data[index] + "\n";
-        }else{
-            htmlinput_text = localst_data[index] + "\n";
+    let new_element;
+    if(data_dead){
+        new_element = document.createElement('p');
+        new_element.textContent = "過去に読み取ったデータがありません。";
+        div_input.appendChild(new_element);
+    }else{
+        for (let index = 0; index < localst_data.length; index++) {
+            new_element = document.createElement('p');
+            new_element.textContent = localst_data[index];
+            new_element.setAttribute("onclick","jump_url(this)")
+            new_element.setAttribute("id","outputurl_"+index)
+            div_input.appendChild(new_element);
         }
     }
-    document.getElementById("text_input_to").innerText = htmlinput_text;
 });
 
 

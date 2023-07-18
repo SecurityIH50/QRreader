@@ -61,12 +61,15 @@ header h1{
 
 #readed_txt{
     margin: 5%;
-    padding-left: 1%;
-    background-color: white;
-}
-#text_input_to{
     padding-left: 2%;
+    padding-right: 2%;
+    background-color: white;
     overflow-wrap: break-word;
+}
+#readed_txt_input_to{
+    color: blue;
+    text-decoration: underline;
+    text-decoration-color: blue;
 }
 #camera_image{
     max-width: 100%;
