@@ -66,6 +66,7 @@ header h1{
 }
 #text_input_to{
     padding-left: 2%;
+    overflow-wrap: break-word;
 }
 #camera_image{
     max-width: 100%;
