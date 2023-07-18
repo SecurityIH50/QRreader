@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QRコードリーダー[beta]</title>
-    <link rel="stylesheet" type="text/css" href="style/style.css?v=8.1">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
     <header>
@@ -14,6 +14,9 @@
         <div id="buttons">
             <button type="button" id="start_camera">読取開始</button>
             <button type="button" id="stop_camera">停止</button>
+            <h1></h1>
+            <input type="file" accept="image/png,image/jpg,image/jpeg,image/gif" onchange="image_scan(event)" id="image_scan_button">
+            <label for="image_scan_button" id="image_scan_label">画像からQR読取</label>
         </div>
         <div id="reader">
             <video id="camera_image" class="reader-video" autoplay playsinline></video>
@@ -31,8 +34,9 @@
         <p>All rights reserved.</p>
     </footer>
     <script src="script/jsQR.js"></script> 
-    <script src="script/qr.js?v=8.0"></script>
+    <script src="script/qr.js"></script>
     <script src="script/storage.js"></script>
     <script src="script/style.js"></script>
+    <script src="script/image_qr.js"></script>
 </body>
 </html>

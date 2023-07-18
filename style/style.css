@@ -37,6 +37,28 @@ header h1{
 #buttons button{
     font-weight: bold;
 }
+
+#image_scan_button{
+    display: none;
+}
+#image_scan_label{
+    display: block;
+    margin-top: 20px;
+    margin-left: 5px;
+    color: white;
+    height: 50px;
+    width: 45%;
+    max-width: 300px;
+    border-radius: 1em;
+    border: 1px black solid;
+    background-color: #730707;
+    font-weight: bold;
+    text-align: center;
+    line-height: calc(50px - 5px);
+}
+
+
+
 #readed_txt{
     margin: 5%;
     padding-left: 1%;
