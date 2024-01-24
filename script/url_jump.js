@@ -5,10 +5,10 @@ function jump_url(dom_id){
 
 function copy_url(dom_id){
     let copy_url_to = dom_id.value;
-    if (navigator.clipboard) {
+    try {
         navigator.clipboard.writeText(copy_url_to);
         alert("クリップボードにコピーしました。");
-    } else {
-        alert("ご利用のブラウザーでは、この操作はできません。");
+    } catch (error) {
+        alert("申し訳ありませんが、コピー中に問題が発生しました。\nエラーの詳細：\n\n"+error);
     }
 }
