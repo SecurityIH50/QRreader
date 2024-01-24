@@ -26,18 +26,33 @@ window.addEventListener('load', (event) => {
         }
     }
     localst_data.reverse();
-    let new_element;
+    let new_element_p,new_element_button,new_element_button2;
     if(data_dead){
-        new_element = document.createElement('p');
-        new_element.textContent = "過去に読み取ったデータがありません。";
-        div_input.appendChild(new_element);
+        new_element_p = document.createElement('p');
+        new_element_p.textContent = "過去に読み取ったデータがありません。";
+        div_input.appendChild(new_element_p);
     }else{
         for (let index = 0; index < localst_data.length; index++) {
-            new_element = document.createElement('p');
-            new_element.textContent = localst_data[index];
-            new_element.setAttribute("onclick","jump_url(this)");
-            new_element.setAttribute("class","readed_txt_input_to");
-            div_input.appendChild(new_element);
+            //url表示
+            new_element_p = document.createElement('p');
+            new_element_p.textContent = localst_data[index];
+            //new_element_p.setAttribute("onclick","jump_url(this)");
+            new_element_p.setAttribute("class","readed_txt_input_to");
+            div_input.appendChild(new_element_p);
+            //URLを開く
+            new_element_button = document.createElement('button');
+            new_element_button.textContent = "このURLを開く";
+            new_element_button.setAttribute('class','url_open_button');
+            new_element_button.setAttribute('value',localst_data[index]);
+            new_element_button.setAttribute("onclick","jump_url(this)");
+            div_input.appendChild(new_element_button);
+            //URLをコピーする
+            new_element_button2 = document.createElement('button');
+            new_element_button2.textContent = "このURLをコピー";
+            new_element_button2.setAttribute('class','url_copy_button');
+            new_element_button2.setAttribute('value',localst_data[index]);
+            new_element_button2.setAttribute("onclick","copy_url(this)");
+            div_input.appendChild(new_element_button2);
         }
     }
 });

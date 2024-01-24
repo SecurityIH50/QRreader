@@ -23,11 +23,13 @@ function image_scan(e) {
                 location.reload();
             }else{
                 alert("QRコードが存在しないか、読み取れません。再度お試しください。");
+                location.reload();
             }
         };
         const dataURL = theFile.target.result;
         if (!dataURL || !dataURL.startsWith("data:image/")) {
             alert("QRコードが存在しないか、読み取れません。再度お試しください。");
+            location.reload();
         }
         image.src = dataURL;
     };
