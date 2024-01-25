@@ -15,8 +15,10 @@ function copy_url(dom_id){
     }
     */
     navigator.clipboard.writeText(copy_url_to).then(function() {
-        console.log('コピー成功');
+        console.log('コピー成功\n'+copy_url_to);
+        alert("クリップボードにコピーしました。");
     }).catch(function(err) {
         console.error('コピー失敗', err);
+        alert("クリップボードへのコピーに失敗しました。\nこのブラウザーでは利用できない可能性があります。\n一般的なブラウザーを使用されている場合は、クリップボードへのアクセスが拒否されていないか確認してください。")
     });
 }
