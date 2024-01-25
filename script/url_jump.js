@@ -5,6 +5,7 @@ function jump_url(dom_id){
 
 function copy_url(dom_id){
     let copy_url_to = dom_id.value;
+    /*
     try {
         navigator.clipboard.writeText(copy_url_to);
         console.log(copy_url_to);
@@ -12,4 +13,10 @@ function copy_url(dom_id){
     } catch (error) {
         alert("申し訳ありませんが、コピー中に問題が発生しました。\nエラーの詳細：\n\n"+error);
     }
+    */
+    navigator.clipboard.writeText(copy_url_to).then(function() {
+        console.log('コピー成功');
+    }).catch(function(err) {
+        console.error('コピー失敗', err);
+    });
 }
